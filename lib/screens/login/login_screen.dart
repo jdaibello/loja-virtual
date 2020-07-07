@@ -19,6 +19,18 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Entrar'),
         centerTitle: true,
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/signup');
+            },
+            textColor: Colors.white,
+            child: const Text(
+              'CRIAR CONTA',
+              style: TextStyle(fontSize: 14),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Card(
@@ -62,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                       height: 44,
                       child: RaisedButton(
                         onPressed: userManager.loading ? null : () {
-                          if (formKey.currentState.validate()){
+                          if (formKey.currentState.validate()) {
                             userManager.signIn(
                                 user: User(
                                     email: emailController.text,
@@ -77,6 +89,7 @@ class LoginScreen extends StatelessWidget {
                                   );
                                 },
                                 onSuccess: () {
+                                  Navigator.of(context).pop();
                                 }
                             );
                           }
