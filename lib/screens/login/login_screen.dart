@@ -50,8 +50,9 @@ class LoginScreen extends StatelessWidget {
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: false,
                       validator: (email) {
-                        if (!emailValid(email))
+                        if (!emailValid(email)) {
                           return 'E-Mail inválido';
+                        }
                         return null;
                       },
                     ),
@@ -63,8 +64,9 @@ class LoginScreen extends StatelessWidget {
                       autocorrect: false,
                       obscureText: true,
                       validator: (pass) {
-                        if (pass.isEmpty || pass.length < 6)
+                        if (pass.isEmpty || pass.length < 6) {
                           return 'Senha inválida';
+                        }
                         return null;
                       },
                     ),
