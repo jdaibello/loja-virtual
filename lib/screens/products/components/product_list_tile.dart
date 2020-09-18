@@ -59,7 +59,7 @@ class ProductListTile extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
